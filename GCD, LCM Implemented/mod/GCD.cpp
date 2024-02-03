@@ -22,24 +22,24 @@ int GCD::get_B() const
 
 void GCD::GCD_input()
 {
-	int _A;
-	int _B;
+	int A;
+	int B;
 
 	cout << "Put A: ";
-	cin >> _A;
-	set_A(_A);
+	cin >> A;
+	set_A(A);
 
 	cout << "Put B: ";
-	cin >> _B;
-	set_B(_B);
+	cin >> B;
+	set_B(B);
 }
 
 int GCD::GCD_alg()
 {
 	mod mod;
 
-	A_prev = A;
-	B_prev = B;
+	A_prev = A;	//Remembers A.
+	B_prev = B;	//Remembers B.
 
 	int rem_tmp;	//Temporary remainder variable.
 	int tmp;	//Swap variable.
@@ -80,7 +80,7 @@ int GCD::GCD_alg()
 
 			rem_tmp = mod.mod_alg();
 		}
-		return B;	//Due to the Euclidean algorithm.
+		return B;	//The Euclidean algorithm.
 	}
 	catch (const char* msg)
 	{

@@ -1,7 +1,7 @@
-﻿  GCD.cpp
-  LCM.cpp
-  app.cpp
+﻿  app.cpp
   control.cpp
+  GCD.cpp
+  LCM.cpp
   mod.cpp
   코드를 생성하고 있습니다...
-  mod.vcxproj -> C:\Users\jsbjs\Desktop\C++\cpp\GCD, LCM Implemented\x64\Debug\mod.exe
+  mod.vcxproj -> C:\Users\pc\Desktop\c_code-main\GCD, LCM Implemented\x64\Debug\mod.exe
