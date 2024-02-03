@@ -4,7 +4,7 @@ int main()
 {
 	control control;
 
-	control.LCM_run();
+	control.general_run();
 
 	return 0;
 }

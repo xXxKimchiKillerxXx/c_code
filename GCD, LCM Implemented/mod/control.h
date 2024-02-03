@@ -3,12 +3,10 @@
 class control
 {
 public:
-	void mod_menu();
+	void general_menu();
+	void general_run();
+
 	void mod_run();
-
-	void GCD_menu();
 	void GCD_run();
-
-	void LCM_menu();
 	void LCM_run();
 };
