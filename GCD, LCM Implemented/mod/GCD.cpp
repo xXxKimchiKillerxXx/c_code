@@ -1,6 +1,5 @@
 #include "std.h"
 
-
 void GCD::set_A(int _A)
 {
 	A = _A;
@@ -33,7 +32,6 @@ void GCD::GCD_input()
 	cout << "Put B: ";
 	cin >> _B;
 	set_B(_B);
-
 }
 
 int GCD::GCD_alg()
@@ -45,7 +43,7 @@ int GCD::GCD_alg()
 
 	int rem_tmp;	//Temporary remainder variable.
 	int tmp;	//Swap variable.
-	bool first_run = true;	//Is it the first run?
+	bool first_run = true;	//Determines the first run.
 
 	try
 	{
@@ -70,7 +68,7 @@ int GCD::GCD_alg()
 			{
 				return B;	//The least one.
 			}
-			first_run = false;	//End of the first run.
+			first_run = false;	//Does not enter the loop again.
 		}
 		while (rem_tmp != 0)
 		{
