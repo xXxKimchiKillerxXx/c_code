@@ -4,8 +4,8 @@ class GCD
 {
 	int A;
 	int B;
-	int tmp_1;
-	int tmp_2;
+	int A_prev;
+	int B_prev;
 	
 public:
 	void set_A(int _A);

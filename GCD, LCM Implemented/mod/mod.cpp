@@ -22,16 +22,16 @@ int mod::get_B() const
 
 void mod::mod_input()
 {
-	int _A;
-	int _B;
+	int A;
+	int B;
 
 	cout << "Put A: ";
-	cin >> _A;
-	set_A(_A);
+	cin >> A;
+	set_A(A);
 
 	cout << "Put B: ";
-	cin >> _B;
-	set_B(_B);
+	cin >> B;
+	set_B(B);
 }
 
 int mod::mod_alg()

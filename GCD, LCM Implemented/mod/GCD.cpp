@@ -38,51 +38,56 @@ void GCD::GCD_input()
 
 int GCD::GCD_alg()
 {
-	int tmp;
+	mod mod;
+
+	A_prev = A;
+	B_prev = B;
+
+	int rem_tmp;	//Temporary remainder variable.
+	int tmp;	//Swap variable.
+	bool first_run = true;	//Is it the first run?
 
 	try
 	{
-		if (A <= 0 || B <= 0)
+		if (A <= 0 || B <= 0)	//Exceptions.
 		{
 			throw("A and B must be positive.");
 		}
-		if (B >= A)
+		if (B >= A)	//Swap function.
 		{
 			tmp = B;
 			B = A;
 			A = tmp;
 		}
-		do
+		if (first_run == true)
 		{
-			mod mod;
+			mod.set_A(A);
+			mod.set_B(B);
+
+			rem_tmp = mod.mod_alg();
+
+			if (rem_tmp == 0)	//The least one divides another.
+			{
+				return B;	//The least one.
+			}
+			first_run = false;	//End of the first run.
+		}
+		while (rem_tmp != 0)
+		{
+			A = B;
+			B = rem_tmp;
 
 			mod.set_A(A);
 			mod.set_B(B);
 
-			tmp_1 = mod.mod_alg();
-			if (tmp_1 == 0)
-			{
-				if (A >= B)
-				{
-					return B;
-				}
-				else
-				{
-					return A;
-				}
-			}
-
-			mod.set_A(B);
-			mod.set_B(tmp_1);
-
-			tmp_2 = mod.mod_alg();
-		} while (tmp_2 != 0);
-
-		return tmp_1;
+			rem_tmp = mod.mod_alg();
+		}
+		return B;	//Due to the Euclidean algorithm.
 	}
 	catch (const char* msg)
 	{
 		cout << msg << endl;
+
 		return -1;
 	}
 }
@@ -96,5 +101,5 @@ void GCD::GCD_print()
 		return;
 	}
 
-	printf("GCD(%i, %i) = %i", A, B, value);
+	printf("GCD(%i, %i) = %i", A_prev, B_prev, value);
 }
