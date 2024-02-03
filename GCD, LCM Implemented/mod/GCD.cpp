@@ -38,11 +38,19 @@ void GCD::GCD_input()
 
 int GCD::GCD_alg()
 {
+	int tmp;
+
 	try
 	{
 		if (A <= 0 || B <= 0)
 		{
 			throw("A and B must be positive.");
+		}
+		if (B >= A)
+		{
+			tmp = B;
+			B = A;
+			A = tmp;
 		}
 		do
 		{
@@ -62,7 +70,7 @@ int GCD::GCD_alg()
 				{
 					return A;
 				}
- 			}
+			}
 
 			mod.set_A(B);
 			mod.set_B(tmp_1);
